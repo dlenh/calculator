@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.firstRow,
+.secondRow,
+.lastRow,
+div,
+.operators {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.title,
+#result {
+    text-align: center;
+}
+
+div {
+    height: 10vh;
+    width: 10vw;
+    border: 2px solid red;
+    margin: 0.5em;
+}
