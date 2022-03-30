@@ -14,7 +14,7 @@ const subtractButton = document.getElementById("subtract")
 const multiplyButton = document.getElementById("multiply")
 const divideButton = document.getElementById("divide")
 const equalButton = document.getElementById("equal")
-const clear = document.getElementById("clear")
+const clearButton = document.getElementById("clear")
 
 
 one.addEventListener("click", oneR)
@@ -32,8 +32,9 @@ addButton.addEventListener("click", addR)
 subtractButton.addEventListener("click", subtractR)
 multiplyButton.addEventListener("click", multiplyR)
 divideButton.addEventListener("click", divideR)
-equalButton.addEventListener("click", equalR)
-clear.addEventListener("click", clearR)
+clearButton.addEventListener("click", clearR)
+
+equalButton.addEventListener("click", operate)
 
 function oneR() {
     result.innerText += 1;
@@ -98,7 +99,6 @@ function equalR() {
 function clearR() {
     result.innerText = "";
 }
-
 
 function add(a, b) {
     return a + b;
