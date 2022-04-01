@@ -34,7 +34,7 @@ multiplyButton.addEventListener("click", multiplyR)
 divideButton.addEventListener("click", divideR)
 clearButton.addEventListener("click", clearR)
 
-equalButton.addEventListener("click", operate)
+equalButton.addEventListener("click", sepNums)
 
 function oneR() {
     result.innerText += 1;
@@ -116,19 +116,45 @@ function divide(a, b) {
     return a / b;
 }
 
-function operate(operator, num1, num2) {
+function sepNums(operator, num1, num2) {
+    arr = (result.innerText).split("")
+    index = arr.indexOf("+" || "-" || "*" || "/")
+    num1 = Number(arr.slice(0, index).join(""))
+    num2 = Number(arr.slice(index + 1).join(""))
+    operator = arr[index]
+    result.innerText += "="
     switch (operator) {
         case "+":
-            return add(num1, num2)
+            return result.innerText += add(num1, num2)
             break;
         case "-": 
-            return subtract(num1, num2)
+            return result.innerText += subtract(num1, num2)
             break;
         case "*":
-            return multiply(num1, num2)
+            return result.innerText += multiply(num1, num2)
             break;
         case "/": 
-            return divide(num1, num2)
+            return result.innerText += divide(num1, num2)
             break;   
     }
 }
+
+// function operate(operator, num1, num2) {
+//     result.innerText += "="
+//     console.log(num1 = Number((result.innerText).slice(0,(result.innerText).indexOf(/\W/g))))
+//     console.log(num2 = Number((result.innerText).slice((result.innerText).indexOf(/\W/g), result.innerText(-1))))
+//     switch (operator) {
+//         case "+":
+//             return add(num1, num2)
+//             break;
+//         case "-": 
+//             return subtract(num1, num2)
+//             break;
+//         case "*":
+//             return multiply(num1, num2)
+//             break;
+//         case "/": 
+//             return divide(num1, num2)
+//             break;   
+//     }
+// }
