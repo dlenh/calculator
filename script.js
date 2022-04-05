@@ -28,6 +28,13 @@ eight.addEventListener("click", eightR)
 nine.addEventListener("click", nineR)
 zero.addEventListener("click", zeroR)
 
+// const operator = {
+//     add: (a,b) => a + b,
+//     subtract: (a,b) => a - b,
+//     multiply: (a,b) => a * b,
+//     divide: (a,b) => a / b
+// }
+
 addButton.addEventListener("click", addR)
 subtractButton.addEventListener("click", subtractR)
 multiplyButton.addEventListener("click", multiplyR)
@@ -116,9 +123,9 @@ function divide(a, b) {
     return a / b;
 }
 
-function sepNums(operator, num1, num2) {
+function sepNums() {
+    index = result.innerText.search(/\D/)
     arr = (result.innerText).split("")
-    index = arr.indexOf("+" || "-" || "*" || "/")
     num1 = Number(arr.slice(0, index).join(""))
     num2 = Number(arr.slice(index + 1).join(""))
     operator = arr[index]
