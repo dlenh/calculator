@@ -16,17 +16,79 @@ const divideButton = document.getElementById("divide")
 const equalButton = document.getElementById("equal")
 const clearButton = document.getElementById("clear")
 
+const number = {
+    one: function() {
+        if ((result.innerText).includes("=")) {
+        result.innerText = "";
+    }
+    result.innerText += 1
+    },
+    two: function() {
+        if ((result.innerText).includes("=")) {
+        result.innerText = "";
+    }
+    result.innerText += 2
+    },
+    three: function() {
+        if ((result.innerText).includes("=")) {
+        result.innerText = "";
+    }
+    result.innerText += 3
+    },
+    four: function() {
+        if ((result.innerText).includes("=")) {
+        result.innerText = "";
+    }
+    result.innerText += 4
+    },
+    five: function() {
+        if ((result.innerText).includes("=")) {
+        result.innerText = "";
+    }
+    result.innerText += 5
+    },
+    six: function() {
+        if ((result.innerText).includes("=")) {
+        result.innerText = "";
+    }
+    result.innerText += 6
+    },
+    seven: function() {
+        if ((result.innerText).includes("=")) {
+        result.innerText = "";
+    }
+    result.innerText += 7
+    },
+    eight: function() {
+        if ((result.innerText).includes("=")) {
+        result.innerText = "";
+    }
+    result.innerText += 8
+    },
+    nine: function() {
+        if ((result.innerText).includes("=")) {
+        result.innerText = "";
+    }
+    result.innerText += 9
+    },
+    zero: function() {
+        if ((result.innerText).includes("=")) {
+        result.innerText = "";
+    }
+    result.innerText += 0
+    },
+} 
 
-one.addEventListener("click", oneR)
-two.addEventListener("click", twoR)
-three.addEventListener("click", threeR)
-four.addEventListener("click", fourR)
-five.addEventListener("click", fiveR)
-six.addEventListener("click", sixR)
-seven.addEventListener("click", sevenR)
-eight.addEventListener("click", eightR)
-nine.addEventListener("click", nineR)
-zero.addEventListener("click", zeroR)
+one.addEventListener("click", number.one)
+two.addEventListener("click", number.two)
+three.addEventListener("click", number.three)
+four.addEventListener("click", number.four)
+five.addEventListener("click", number.five)
+six.addEventListener("click", number.six)
+seven.addEventListener("click", number.seven)
+eight.addEventListener("click", number.eight)
+nine.addEventListener("click", number.nine)
+zero.addEventListener("click", number.zero)
 
 // const operator = {
 //     add: (a,b) => a + b,
@@ -43,45 +105,76 @@ clearButton.addEventListener("click", clearR)
 
 equalButton.addEventListener("click", sepNums)
 
-function oneR() {
-    result.innerText += 1;
-}
 
-function twoR() {
-    result.innerText += 2;
-}
+// function oneR() {
+//     if ((result.innerText).includes("=")) {
+//         result.innerText = "";
+//     }
+//     result.innerText += 1;
+// }
 
-function threeR() {
-    result.innerText += 3;
-}
+// function twoR() {
+//     if ((result.innerText).includes("=")) {
+//         result.innerText = "";
+//     }
+//     result.innerText += 2;
+// }
 
-function fourR() {
-    result.innerText += 4;
-}
+// function threeR() {
+//     if ((result.innerText).includes("=")) {
+//         result.innerText = "";
+//     }
+//     result.innerText += 3;
+// }
 
-function fiveR() {
-    result.innerText += 5;
-}
+// function fourR() {
+//     if ((result.innerText).includes("=")) {
+//         result.innerText = "";
+//     }
+//     result.innerText += 4;
+// }
 
-function sixR() {
-    result.innerText += 6;
-}
+// function fiveR() {
+//     if ((result.innerText).includes("=")) {
+//         result.innerText = "";
+//     }
+//     result.innerText += 5;
+// }
 
-function sevenR() {
-    result.innerText += 7;
-}
+// function sixR() {
+//     if ((result.innerText).includes("=")) {
+//         result.innerText = "";
+//     }
+//     result.innerText += 6;
+// }
 
-function eightR() {
-    result.innerText += 8;
-}
+// function sevenR() {
+//     if ((result.innerText).includes("=")) {
+//         result.innerText = "";
+//     }
+//     result.innerText += 7;
+// }
 
-function nineR() {
-    result.innerText += 9;
-}
+// function eightR() {
+//     if ((result.innerText).includes("=")) {
+//         result.innerText = "";
+//     }
+//     result.innerText += 8;
+// }
 
-function zeroR() {
-    result.innerText += 0;
-}
+// function nineR() {
+//     if ((result.innerText).includes("=")) {
+//         result.innerText = "";
+//     }
+//     result.innerText += 9;
+// }
+
+// function zeroR() {
+//     if ((result.innerText).includes("=")) {
+//         result.innerText = "";
+//     }
+//     result.innerText += 0;
+// }
 
 function addR() {
     result.innerText += "+";
