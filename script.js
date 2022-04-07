@@ -17,66 +17,16 @@ const equalButton = document.getElementById("equal")
 const clearButton = document.getElementById("clear")
 
 const number = {
-    one: function() {
-        if ((result.innerText).includes("=")) {
-        result.innerText = "";
-    }
-    result.innerText += 1
-    },
-    two: function() {
-        if ((result.innerText).includes("=")) {
-        result.innerText = "";
-    }
-    result.innerText += 2
-    },
-    three: function() {
-        if ((result.innerText).includes("=")) {
-        result.innerText = "";
-    }
-    result.innerText += 3
-    },
-    four: function() {
-        if ((result.innerText).includes("=")) {
-        result.innerText = "";
-    }
-    result.innerText += 4
-    },
-    five: function() {
-        if ((result.innerText).includes("=")) {
-        result.innerText = "";
-    }
-    result.innerText += 5
-    },
-    six: function() {
-        if ((result.innerText).includes("=")) {
-        result.innerText = "";
-    }
-    result.innerText += 6
-    },
-    seven: function() {
-        if ((result.innerText).includes("=")) {
-        result.innerText = "";
-    }
-    result.innerText += 7
-    },
-    eight: function() {
-        if ((result.innerText).includes("=")) {
-        result.innerText = "";
-    }
-    result.innerText += 8
-    },
-    nine: function() {
-        if ((result.innerText).includes("=")) {
-        result.innerText = "";
-    }
-    result.innerText += 9
-    },
-    zero: function() {
-        if ((result.innerText).includes("=")) {
-        result.innerText = "";
-    }
-    result.innerText += 0
-    },
+    one() {result.innerText += 1},
+    two() {result.innerText += 2},
+    three() {result.innerText += 3},
+    four() {result.innerText += 4},
+    five() {result.innerText += 5},
+    six() {result.innerText += 6},
+    seven() {result.innerText += 7},
+    eight() {result.innerText += 8},
+    nine() {result.innerText += 9},
+    zero() {result.innerText += 0}
 } 
 
 one.addEventListener("click", number.one)
