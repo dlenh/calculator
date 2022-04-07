@@ -97,13 +97,72 @@ zero.addEventListener("click", number.zero)
 //     divide: (a,b) => a / b
 // }
 
-addButton.addEventListener("click", addR)
-subtractButton.addEventListener("click", subtractR)
-multiplyButton.addEventListener("click", multiplyR)
-divideButton.addEventListener("click", divideR)
-clearButton.addEventListener("click", clearR)
+const display = {
+    add: function() {
+        result.innerText += "+";
+    },
+    subtract: function() {
+        result.innerText += "-";
+    },
+    multiply: function() {
+        result.innerText += "*";
+    },
+    divide: function() {
+        result.innerText += "/";
+    },
+    equal: function() {
+        result.innerText += "=";
+    },
+    clear: function() {
+        result.innerText = "";
+    }
+}
 
-equalButton.addEventListener("click", sepNums)
+const getNum = {
+    num1: function() {
+        index = result.innerText.search(/\D/)
+        arr = (result.innerText).split("")
+        return num1 = Number(arr.slice(0, index).join(""))
+    },
+    num2: function() {
+        index = result.innerText.search(/\D/)
+        arr = (result.innerText).split("")
+        equal = result.innerText.indexOf("=");
+        return num2 = Number(arr.slice(index + 1, equal).join(""))
+    }
+}
+
+// function getNum1() {
+//     index = result.innerText.search(/\D/)
+//     arr = (result.innerText).split("")
+//     num1 = Number(arr.slice(0, index).join(""))
+// }
+
+// function getNum2() {
+//     index = result.innerText.search(/\D/)
+//     arr = (result.innerText).split("")
+//     num2 = Number(arr.slice(index + 1).join(""))
+// }
+
+addButton.addEventListener("click", () => {
+    display.add();
+    getNum.num1();
+});
+subtractButton.addEventListener("click", () => {
+    display.subtract();
+    getNum.num1();
+});
+multiplyButton.addEventListener("click", () => {
+    display.multiply();
+    getNum.num1();
+});
+divideButton.addEventListener("click", () => {
+    display.divide();
+    getNum.num1();
+});
+clearButton.addEventListener("click", display.clear)
+
+equalButton.addEventListener("click", operate)
 
 
 // function oneR() {
@@ -176,29 +235,31 @@ equalButton.addEventListener("click", sepNums)
 //     result.innerText += 0;
 // }
 
-function addR() {
-    result.innerText += "+";
-}
 
-function subtractR() {
-    result.innerText += "-";
-}
 
-function multiplyR() {
-    result.innerText += "*";
-}
+// function addR() {
+//     result.innerText += "+";
+// }
 
-function divideR() {
-    result.innerText += "/";
-}
+// function subtractR() {
+//     result.innerText += "-";
+// }
 
-function equalR() {
-    result.innerText += "=";
-}
+// function multiplyR() {
+//     result.innerText += "*";
+// }
 
-function clearR() {
-    result.innerText = "";
-}
+// function divideR() {
+//     result.innerText += "/";
+// }
+
+// function equalR() {
+//     result.innerText += "=";
+// }
+
+// function clearR() {
+//     result.innerText = "";
+// }
 
 function add(a, b) {
     return a + b;
@@ -239,22 +300,27 @@ function sepNums() {
     }
 }
 
-// function operate(operator, num1, num2) {
-//     result.innerText += "="
-//     console.log(num1 = Number((result.innerText).slice(0,(result.innerText).indexOf(/\W/g))))
-//     console.log(num2 = Number((result.innerText).slice((result.innerText).indexOf(/\W/g), result.innerText(-1))))
-//     switch (operator) {
-//         case "+":
-//             return add(num1, num2)
-//             break;
-//         case "-": 
-//             return subtract(num1, num2)
-//             break;
-//         case "*":
-//             return multiply(num1, num2)
-//             break;
-//         case "/": 
-//             return divide(num1, num2)
-//             break;   
-//     }
-// }
+function operate(operator, num1, num2) {
+    result.innerText += "="
+    // console.log(num1 = Number((result.innerText).slice(0,(result.innerText).indexOf(/\W/g))))
+    // console.log(num2 = Number((result.innerText).slice((result.innerText).indexOf(/\W/g), result.innerText(-1))))
+    num1 = getNum.num1(); 
+    num2 = getNum.num2();
+    index = result.innerText.search(/\D/);
+    arr = (result.innerText).split("");
+    operator = arr[index];
+    switch (operator) {
+        case "+":
+            result.innerText += add(num1, num2)
+            break;
+        case "-": 
+            result.innerText += subtract(num1, num2)
+            break;
+        case "*":
+            result.innerText += multiply(num1, num2)
+            break;
+        case "/": 
+            result.innerText += divide(num1, num2)
+            break;   
+    }
+}
