@@ -6,7 +6,9 @@
 
 .firstRow,
 .secondRow,
-.lastRow,
+.thirdRow,
+.fourthRow,
+.fifthRow,
 div,
 .operators {
     display: flex;
@@ -25,8 +27,4 @@ div {
     width: 10vw;
     border: 2px solid red;
     margin: 0.5em;
-}
-
-.calculatorBody {
-    display: flex;
 }
