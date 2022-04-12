@@ -16,6 +16,8 @@ const divideButton = document.getElementById("divide")
 const equalButton = document.getElementById("equal")
 const clearButton = document.getElementById("clear")
 const delButton = document.getElementById("backspace")
+const percentButton = document.getElementById("percent")
+const reverseButton = document.getElementById("reverse")
 
 const number1 = () => {
     num1 += result.innerText;
@@ -63,6 +65,14 @@ const backspace = () => {
     result.innerText = arr.join("");
 }
 
+const percent = () => {
+    result.innerText = Number(result.innerText)/100;
+}
+
+const reverse = () => {
+    result.innerText = Number(result.innerText)*-1;
+}
+
 one.addEventListener("click", number.one)
 two.addEventListener("click", number.two)
 three.addEventListener("click", number.three)
@@ -78,7 +88,6 @@ addButton.addEventListener("click", () => {
     addButton.style.backgroundColor = "pink";
     number1();
 });
-
 subtractButton.addEventListener("click", () => {
     subtractButton.style.backgroundColor = "pink";
     number1();
@@ -91,17 +100,16 @@ divideButton.addEventListener("click", () => {
     divideButton.style.backgroundColor = "pink";
     number1();
 });
-
 equalButton.addEventListener("click", () => {
     number2();
     clearDisplay();
     operate();
     clearAll();
 })
-
 clearButton.addEventListener("click", clearDisplay);
-
 delButton.addEventListener("click", backspace);
+percentButton.addEventListener("click", percent);
+reverseButton.addEventListener("click", reverse);
 
 let num1 = "";
 let num2 = "";
